@@ -26,8 +26,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("Please join the channel to use this bot.", reply_markup=InlineKeyboardMarkup(keyboard))
         return
 
-    await context.bot.send_message(DUMP_CHANNEL_ID, f"User: {user.username or user.id}
-Sent: {url}")
+    await context.bot.send_message(DUMP_CHANNEL_ID, f"User: {user.username or user.id}\nSent: {url}")
+
 
     video_url = download_instagram_video(url)
     if video_url:
